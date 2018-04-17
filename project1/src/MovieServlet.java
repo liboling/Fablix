@@ -47,7 +47,15 @@ public class MovieServlet extends HttpServlet {
         		// declare statement
         		Statement statement = connection.createStatement();
         		// prepare query
-        		String query = "SELECT * from movies limit 10";
+        		String query = "select sub.*, ratings.rating \n" + 
+        				"from\n" + 
+        				"(\n" + 
+        				"	select m.id, title, year, director, group_concat(s.name, ','), group_concat(g.name,',') \n" + 
+        				"	from movies m, stars_in_movies sim, stars s, genres g, genres_in_movies gim\n" + 
+        				"	where m.id = sim.movieId and sim.starId = s.id and m.id = gim.movieId and gim.genreId = g.id\n" + 
+        				"	group by m.id\n" + 
+        				") sub, ratings\n" + 
+        				"where sub.id = ratings.movieId LIMIT 10";
         		// execute query
         		ResultSet resultSet = statement.executeQuery(query);
 
@@ -62,6 +70,9 @@ public class MovieServlet extends HttpServlet {
         		out.println("<td>title</td>");
         		out.println("<td>year</td>");
         		out.println("<td>director</td>");
+        		out.println("<td>list of genres</td>");
+        		out.println("<td>list of stars</td>");
+        		out.println("<td>ratings</td>");
         		out.println("</tr>");
         		
         		// add a row for every star result
@@ -71,12 +82,16 @@ public class MovieServlet extends HttpServlet {
         			String title = resultSet.getString("title");
         			String year = resultSet.getString("year");
         			String director = resultSet.getString("director");
+        			//String listOfStars = resultSet.getString("name");
+        			//String listOfGenres = resultSet.getString("name");
+        			String rating = resultSet.getString("rating");
         			
         			out.println("<tr>");
         			out.println("<td>" + movieId + "</td>");
         			out.println("<td>" + title + "</td>");
         			out.println("<td>" + year + "</td>");
         			out.println("<td>" + director + "</td>");
+        			out.println("<td>" + rating + "</td>");
         			out.println("</tr>");
         		}
         		
