@@ -70,8 +70,8 @@ public class MovieServlet extends HttpServlet {
         		out.println("<td>title</td>");
         		out.println("<td>year</td>");
         		out.println("<td>director</td>");
-        		out.println("<td>list of genres</td>");
         		out.println("<td>list of stars</td>");
+        		out.println("<td>list of genres</td>");
         		out.println("<td>ratings</td>");
         		out.println("</tr>");
         		
@@ -82,8 +82,8 @@ public class MovieServlet extends HttpServlet {
         			String title = resultSet.getString("title");
         			String year = resultSet.getString("year");
         			String director = resultSet.getString("director");
-        			//String listOfStars = resultSet.getString("name");
-        			//String listOfGenres = resultSet.getString("name");
+        			String listOfStars = resultSet.getString(5);
+        			String listOfGenres = resultSet.getString(6);
         			String rating = resultSet.getString("rating");
         			
         			out.println("<tr>");
@@ -91,6 +91,8 @@ public class MovieServlet extends HttpServlet {
         			out.println("<td>" + title + "</td>");
         			out.println("<td>" + year + "</td>");
         			out.println("<td>" + director + "</td>");
+        			out.println("<td>" + listOfStars + "</td>");
+        			out.println("<td>" + listOfGenres + "</td>");
         			out.println("<td>" + rating + "</td>");
         			out.println("</tr>");
         		}
