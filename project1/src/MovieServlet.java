@@ -47,15 +47,15 @@ public class MovieServlet extends HttpServlet {
         		// declare statement
         		Statement statement = connection.createStatement();
         		// prepare query
-        		String query = "select sub.*, ratings.rating \n" + 
+        		String query = "select sub.title, sub.year, sub.director, sub.rating, sub.stars, g.name as gneres\n" + 
         				"from\n" + 
         				"(\n" + 
-        				"	select m.id, title, year, director, group_concat(s.name, ','), group_concat(g.name,',') \n" + 
-        				"	from movies m, stars_in_movies sim, stars s, genres g, genres_in_movies gim\n" + 
-        				"	where m.id = sim.movieId and sim.starId = s.id and m.id = gim.movieId and gim.genreId = g.id\n" + 
-        				"	group by m.id\n" + 
-        				") sub, ratings\n" + 
-        				"where sub.id = ratings.movieId LIMIT 10";
+        				"	select m.id, title, year, director, ratings.rating, group_concat(s.name, ',') as stars\n" + 
+        				"	from movies m, stars_in_movies sim, stars s, ratings\n" + 
+        				"	where m.id = sim.movieId and sim.starId = s.id and m.id = ratings.movieId\n" + 
+        				"	group by m.id, ratings.rating\n" + 
+        				") sub, genres g, genres_in_movies gim\n" + 
+        				"where sub.id = gim.movieId and gim.genreId = g.id LIMIT 10";
         		// execute query
         		ResultSet resultSet = statement.executeQuery(query);
 
