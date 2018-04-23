@@ -14,36 +14,74 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <title>Single Star</title>
 </head>
 <body>
-<h1>Single Star Page</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.ucigoclub.com/">Home</a>
+            </div>
+           
+            <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#">All</a>
+                </li>
+                <li>
+                    <a href="#">Demo</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+    	<div class="col-md-12">
+    		<h1>Single Star Page</h1>
+    	</div>
+    </div>
+
 
 <!-- H3 body is left empty here, will be populated with the data retrieved with single-star.js -->
 <!-- single-star.js will find this html element by it's id "star_info" -->
-<h3 id="star_info"></h3>
-<table id=movie_table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Movie Title</th>
-        <th>Release Year</th>
-        <th>Director</th>
-        <th>
-    </tr>
-    </thead>
+<div class="container">
+	<div class="col-md-12">
+	<h3 id="star_info"></h3>
+		<table id=movie_table class="table table-striped">
+		    <thead>
+		    <tr>
+		        <th>Movie Title</th>
+		        <th>Release Year</th>
+		        <th>Director</th>
+		        <th>
+		    </tr>
+		    </thead>
+		
+		    <!-- Table body is left empty here, will be populated with the data retrieved with single-star.js -->
+		    <!-- single-star.js will find this html element by it's id "movie_table_body" -->
+		    <tbody id=movie_table_body></tbody>
+		</table>
+	</div>
+</div>
 
-    <!-- Table body is left empty here, will be populated with the data retrieved with single-star.js -->
-    <!-- single-star.js will find this html element by it's id "movie_table_body" -->
-    <tbody id=movie_table_body></tbody>
-</table>
 
 <!-- Load jQuery and Bootstrap JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <!-- Load our own JS file -->
 <!-- The path is relative to single-star.html, since these two files are in the same directory -->
