@@ -8,15 +8,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Required meta tags -->
-<!--     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    Bootstrap CSS
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- -->
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"
@@ -31,6 +23,7 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<div class="navbar navbar-default navbar-static-top" role="navigation">
 		<div class="container">
 
@@ -65,15 +58,17 @@
 				</div>
 
 				<div class="container">
-					<div class="col-md-9">
+					<div class="col-xs-12 col-sm-9">
 						<div class="page-header">
 							<h2>Popular Stars List</h2>
 						</div>
 					</div>
 				</div>
-				
+
+				<!-- Id "star_table" is useful for jQuery to find the html element with id, 
+				class here is mapping to Bootstrap defined class CSS -->
 				<div class="container">
-					<div class="col-md-9">
+					<div class="col-xs-12 col-sm-9">
 						<table id=star_table class="table table-striped">
 							<thead>
 								<tr>
@@ -85,69 +80,23 @@
 						</table>
 					</div>
 				</div>
-				
+
 			</div>
 
-				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-					<div class="list-group">
-						<a class="list-group-item active"><i
-							class="glyphicon glyphicon-share	
+			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+				<div class="list-group">
+					<a class="list-group-item active"><i
+						class="glyphicon glyphicon-share	
 					"></i>Useful Links</a> <a
-							href="http://www.imdb.com" class="list-group-item">iMDB</a> <a
-							href="https://www.rottentomatoes.com/" class="list-group-item">Rotten
-							Tomatoes</a> <a href="https://www.cinemablend.com/"
-							class="list-group-item">Cinema Blend</a> <a
-							href="https://www.movieweb.com/" class="list-group-item">MovieWeb</a>
-					</div>
+						href="http://www.imdb.com" class="list-group-item">iMDB</a> <a
+						href="https://www.rottentomatoes.com/" class="list-group-item">Rotten
+						Tomatoes</a> <a href="https://www.cinemablend.com/"
+						class="list-group-item">Cinema Blend</a> <a
+						href="https://www.movieweb.com/" class="list-group-item">MovieWeb</a>
 				</div>
 			</div>
 		</div>
-
-
-	<!-- 	<div class="contianer">
-		<div class="row row-offcanvas row-offcanvas-right">
-			<div class="col-xs-12 col-sm-9">
-				<div class="jumbotron">
-					<h1>Welcome to Fablix!</h1>
-					<p>Buy your movies @ Fablix today!</p>
-				</div>
-
-				<div class="container">
-					<div class="col-md-12">
-						<h2>Popular Movies List</h2>
-					</div>
-				</div>
-				<div class="container">
-					<div class="col-md-12">
-						<div class="page-header">
-						<h2>Popular Stars List</h2>
-						</div>
-					</div>
-				</div>
-
-
-				Id "star_table" is useful for jQuery to find the html element with id, class here is mapping to Bootstrap defined class CSS
-				<div class="container">
-					<div class="col-md-12">
-						<table id=star_table class="table table-striped">
-							Create a table header
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Birth Year</th>
-								</tr>
-							</thead>
-							<tbody id=star_table_body></tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!-- Load jQuery and Bootstrap JS -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+	</div>
 
 	<!-- Load our own JS file -->
 	<!-- The path is relative to index.html, since these two files are in the same directory -->
