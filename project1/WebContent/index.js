@@ -41,6 +41,22 @@ function handleStarResult(resultData) {
     }
 }
 
+function handleMovieResult(resultData){
+	console.log("handleMovieResult: populating movie table from resultData");
+	let movieTableElemnt = jQuery("#movie_table_body");
+	for(let i = 0; i < Math.min(10, resultData.length); i++){
+		let rowHTML = "";
+		rowHTML += "<tr>";
+		rowHTML += 
+			"<th>"+
+			'<a href="single-movie.html>id='+resultData[i]['movie_id']+'">'+resultData[i]["movie_name"]+'</a>'+
+			"</th>";
+		rowHTML += "<th>" + resultData[i]["movie_year"]+"</th>";
+		rowHTML += "<th>" + resultData[i]["movie_director"]+"</th>";
+		rowHTML += "</tr>";
+		movieTableElemnt.append(rowHTML);
+	}
+}
 
 /**
  * Once this .js is loaded, following scripts will be executed by the browser
@@ -52,4 +68,11 @@ jQuery.ajax({
     method: "GET", // Setting request method
     url: "api/stars", // Setting request url, which is mapped by StarsServlet in Stars.java
     success: (resultData) => handleStarResult(resultData) // Setting callback function to handle data returned successfully by the StarsServlet
+});
+
+jQuery.ajax({
+	dataType:"json",
+	method:"GET",
+	url:"api/movies",
+	success:(resultData)=>handleMovieResult(resultData)
 });
