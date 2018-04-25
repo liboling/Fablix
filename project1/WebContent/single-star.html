@@ -25,13 +25,7 @@
         <div class="container">
             
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://www.ucigoclub.com/">Home</a>
+                <a class="navbar-brand" href="/project1">Fablix</a>
             </div>
            
             <div class="navbar-collapse collapse">
@@ -40,10 +34,10 @@
                     <a href="#">All</a>
                 </li>
                 <li>
-                    <a href="#">Demo</a>
+                    <a href="#">Movies</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#">Stars</a>
                 </li>
             </ul>
         </div>
@@ -51,7 +45,7 @@
     </div>
     <div class="container">
     	<div class="col-md-12">
-    		<h1>Single Star Page</h1>
+    		<h2 id=single_star_name></h2>
     	</div>
     </div>
 
@@ -60,8 +54,13 @@
 <!-- single-star.js will find this html element by it's id "star_info" -->
 <div class="container">
 	<div class="col-md-12">
+						
 	<h3 id="star_info"></h3>
+	<div class="page-header">
+							<h4>Filmography</h4>
+						</div>
 		<table id=movie_table class="table table-striped">
+		
 		    <thead>
 		    <tr>
 		        <th>Movie Title</th>
